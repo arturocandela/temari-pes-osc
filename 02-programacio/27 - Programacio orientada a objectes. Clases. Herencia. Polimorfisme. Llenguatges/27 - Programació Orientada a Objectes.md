@@ -1,5 +1,29 @@
 # 27 - Programació Orientada a Objectes. Objectes. Classes. Herència, Polimorfisme. Llenguatges
 
+* [1. INTRODUCCIÓ](#1-introducció)
+* [2. CLASSES I OBJECTES](#2-classes-i-objectes)
+  * [2.1. Elements](#21-elements)
+    * [2.1.1. Atributs](#211-atributs)
+    * [2.1.2. Mètodes](#212-mètodes)
+    * [2.1.3. Constructors i Destructors](#213-constructors-i-destructors)
+  * [2.2. Associacions](#22-associacions)
+* [3. ELS 4 PILARS DE LA PROGRAMACIÓ ORIENTADA A OBJECTES](#3-els-4-pilars-de-la-programació-orientada-a-objectes)
+  * [3.1. Encapsulació](#31-encapsulació)
+  * [3.2. Abstracció](#32-abstracció)
+  * [3.3. Herència](#33-herència)
+    * [3.3.1. Classes abstractes](#331-classes-abstractes)
+    * [3.3.2. Interfícies](#332-interfícies)
+  * [3.4. Polimorfisme](#34-polimorfisme)
+* [4. LLENGUATGES](#4-llenguatges)
+  * [4.1. Javascript (Híbrid)](#41-javascript-híbrid)
+  * [4.2. Java (Pur)](#42-java-pur)
+  * [4.3. Python (Híbrid)](#43-python-híbrid)
+  * [4.4. PHP (Híbrid)](#44-php-híbrid)
+  * [4.5. C# (Pur)](#45-c-pur)
+* [5. CONCLUSIÓ](#5-conclusió)
+* [6. REFERÈNCIA AL SISTEMA EDUCATIU](#6-referència-al-sistema-educatiu)
+* [7. BIBLIOGRAFIA](#7-bibliografia)
+
 ## 1. INTRODUCCIÓ
 
 El paradigma de la programació modular divideix el problema en un **conjunt de funcions que operen sobre un grup de dades** per arribar a la solució del problema. Este paradigma permet resoldre una gran quantitat de problemes. No obstant això, quan la complexitat d'estos augmenta, també ho fan les interrelacions, per la qual cosa l'acoplament entre les funcions creix de manera exponencial. Açò acaba generant un codi molt difícil de mantindre, perquè no hi ha una manera senzilla de determinar si un canvi en una funció concreta afectarà una altra.
@@ -226,9 +250,23 @@ La OOP ha permés desenvolupar programes més modulars i mantenibles. Els seus p
 
 Per a obtindre programes realment mantenibles, és recomanable seguir patrons de disseny, com els descrits per Robert C. Martin (*Uncle Bob*).
 
+Un dels principis de desenvolupament proposats per *Uncle Bob* es `SOLID` que significa:
+
+| Lletra | Nom complet                               | Traducció                            | Descripció breu                                                                                                                                            |
+| :----: | :---------------------------------------- | :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  **S** | **Single Responsibility Principle (SRP)** | Principi de responsabilitat única    | Una classe ha de tindre **una sola raó per a canviar**. Cada mòdul o classe ha de fer només una cosa.                                                      |
+|  **O** | **Open/Closed Principle (OCP)**           | Principi d’obertura/tancament        | El codi ha d’estar **obert a l’extensió però tancat a la modificació**. És a dir, es pot ampliar funcionalitat sense tocar el codi existent.               |
+|  **L** | **Liskov Substitution Principle (LSP)**   | Principi de substitució de Liskov    | Una subclasse ha de poder substituir la seua classe pare **sense alterar el comportament correcte del programa**.                                          |
+|  **I** | **Interface Segregation Principle (ISP)** | Principi de segregació d’interfícies | És millor tindre **moltes interfícies específiques** que una de massa gran. Els clients no haurien d’estar obligats a dependre de mètodes que no usen.     |
+|  **D** | **Dependency Inversion Principle (DIP)**  | Principi d’inversió de dependències  | Les classes d’alt nivell **no han de dependre de classes de baix nivell**, sinó d’abstraccions (interfícies). Les dependències van **de fora cap a dins**. |
+
+Utilitzar-los farà que el nostre codi siga molt més mantenible. Una de les imatges més descriptives que podem utilitzar per a recordar-ho és:
+
+![liskow_principle](md_media/liskov_meme.jpg)
+
 ## 6. REFERÈNCIA AL SISTEMA EDUCATIU
 
-:[Referència al sistema educatiu](../CONTEXTUALITZACIO/contextualitzacio.md)
+:[Referència al sistema educatiu](../00-contextualitzacio/contextualitzacio.md)
 
 ## 7. BIBLIOGRAFIA
 

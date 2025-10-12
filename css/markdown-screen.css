@@ -1,0 +1,10 @@
+/*
+    Formato para los temas
+*/
+h2 {
+    text-transform: uppercase;
+} 
+
+p,li {
+    text-align: justify;
+}

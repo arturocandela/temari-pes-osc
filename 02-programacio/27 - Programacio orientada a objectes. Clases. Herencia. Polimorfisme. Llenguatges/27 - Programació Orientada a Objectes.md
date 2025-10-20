@@ -1,5 +1,32 @@
 # 27 - Programació Orientada a Objectes. Objectes. Classes. Herència, Polimorfisme. Llenguatges
 
+* [1. Introducció](#1-introducció)
+* [2. Classes i Objectes](#2-classes-i-objectes)
+  * [2.1. Elements](#21-elements)
+    * [2.1.1. Atributs](#211-atributs)
+    * [2.1.2. Mètodes](#212-mètodes)
+    * [2.1.3. Constructors i Destructors](#213-constructors-i-destructors)
+  * [2.2. Associacions](#22-associacions)
+* [3. Els 4 Pilars de la Programació Orientada a Objectes](#3-els-4-pilars-de-la-programació-orientada-a-objectes)
+  * [3.1. Encapsulació](#31-encapsulació)
+  * [3.2. Abstracció](#32-abstracció)
+  * [3.3. Herència](#33-herència)
+    * [3.3.1. Classes Abstractes](#331-classes-abstractes)
+    * [3.3.2. Interfícies](#332-interfícies)
+  * [3.4. Polimorfisme](#34-polimorfisme)
+    * [3.4.1. Sobrecàrrega o polimorfisme ad-hoc](#341-sobrecàrrega-o-polimorfisme-ad-hoc)
+    * [3.4.2. Sobreescriptura o polimorfisme d’inclusió](#342-sobreescriptura-o-polimorfisme-dinclusió)
+    * [3.4.3. Variables polimòrfiques](#343-variables-polimòrfiques)
+* [4. Llenguatges](#4-llenguatges)
+  * [4.1. Javascript (Híbrid)](#41-javascript-híbrid)
+  * [4.2. Java (Pur)](#42-java-pur)
+  * [4.3. Python (Híbrid)](#43-python-híbrid)
+  * [4.4. PHP (Híbrid)](#44-php-híbrid)
+  * [4.5. C# (Pur)](#45-c-pur)
+  * [4.6. Exemple visual](#46-exemple-visual)
+* [5. Conclusió](#5-conclusió)
+* [6. Bibliografia](#6-bibliografia)
+
 ## 1. Introducció
 
 El paradigma de la programació modular divideix el problema en un **conjunt de funcions que operen sobre un grup de dades** per arribar a la solució del problema. Aquest paradigma permet resoldre una gran quantitat de problemes. No obstant això, quan la complexitat d’aquests augmenta, també ho fan les interrelacions, per la qual cosa l’acoblament entre les funcions creix de manera exponencial. Açò acaba generant un codi molt difícil de mantenir, perquè no hi ha una manera senzilla de determinar si un can...
@@ -305,7 +332,7 @@ Els **principis SOLID**, proposats per *Robert C. Martin* (*Uncle Bob*), represe
 | **I**  | *Interface Segregation Principle (ISP)* | Principi de segregació d’interfícies | És millor tindre **moltes interfícies específiques** que una de massa gran. Els clients no haurien de dependre de mètodes que no utilitzen. |
 | **D**  | *Dependency Inversion Principle (DIP)*  | Principi d’inversió de dependències  | Les classes d’alt nivell **no han de dependre de classes de baix nivell**, sinó d’abstraccions (*interfícies*). Les dependències han d’anar de fora cap a dins. |
 
-### Exemple visual
+### 4.6. Exemple visual
 
 Una de les representacions més populars d’aquests principis és la del **Principi de Substitució de Liskov (LSP)**, que recorda que tota subclasse ha de comportar-se com la seua superclasse sense alterar la lògica general del sistema.
 
@@ -315,7 +342,7 @@ Aplicar aquests principis no sols millora la qualitat del codi, sinó que també
 
 > 💡 *“El bon disseny no és aquell que no canvia mai, sinó aquell que pot canviar fàcilment.”* — *Robert C. Martin (Uncle Bob)*
 
-## 6. Conclusió
+## 5. Conclusió
 
 La **programació orientada a objectes (OOP)** ha suposat un canvi fonamental en la manera de concebre i desenvolupar programari. En contrast amb els paradigmes estructurats o modulars, la OOP ofereix un model que reflecteix millor el món real, ja que organitza les dades i els comportaments en unitats anomenades objectes.
 
@@ -325,7 +352,7 @@ Tanmateix, cal recordar que la programació orientada a objectes no és una solu
 
 En definitiva, la OOP no sols és una tècnica de programació, sinó una filosofia de disseny que busca millorar la comprensió, l’evolució i la qualitat del programari.
 
-## 7. Bibliografia
+## 6. Bibliografia
 
 1. [RedMonk – *Language Rankings*](https://redmonk.com/sogrady/2019/03/20/language-rankings-1-19/)  
    Informe anual d’anàlisi de popularitat dels llenguatges de programació basat en dades de *GitHub* i *Stack Overflow*.

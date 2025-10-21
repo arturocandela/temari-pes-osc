@@ -1,29 +1,61 @@
 ---
 marp: true
-headingDivider: 2
+theme: gaia
 paginate: true
-theme: uncover
+headingDivider: 2
+transition: fade
+style: |
+  section {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: #E0E7FF;
+    font-family: 'Nunito Sans', 'Quicksand', sans-serif;
+  }
+  h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #A5B4FC;
+  }
+  code {
+    background: rgba(255,255,255,0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+  }
+  pre code {
+    background: rgba(0,0,0,0.4);
+    border-left: 3px solid #60A5FA;
+    padding: 1em;
+    border-radius: 8px;
+  }
+  .fragment {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.6s ease-out;
+  }
+  section:target .fragment {
+    opacity: 1;
+    transform: none;
+  }
 ---
 
 # Programació Orientada a Objectes
 <!-- _paginate: false -->
 ![You have no class](md_media/you_have_no_class.jpg)
 
-## Introducció
+## 1. Introducció
 
 * El paradigma de la programació modular divideix el problema en un **conjunt de funcions que operen sobre un grup de dades** per arribar a la solució del problema
 * En la **programació orientada a objectes** es combinen funcions i dades relacionades en una unitat de dades i funcional anomenada *objecte*.
 
 > En aquest tema estudiarem la OOP i quines son les seues caracterísitiques.
 
-## Classes i Objectes
+## 2. Classes i Objectes
 
 * Idea fonamental del paradigma és proporcionar models al programador que **s'assemblen al món real**
 * La *unitat fonamental d’aquest paradigma* és l'**objecte**.
 
 ---
 
-### Qué es l'objecte?
+### 2.1. Qué es l'objecte?
 
 L’objecte una unitat operacional que engloba de variables (denominades *atributs*) i les operacions (denominades *mètodes*). Exemple de *Coche*
 
@@ -36,11 +68,13 @@ L’objecte una unitat operacional que engloba de variables (denominades *atribu
 
 ---
 
-### Elements
+### 2.2. Elements
+
+> Quins components formen l'objecte? 
 
 ---
 
-#### Atributs
+#### 2.2.1. Atributs
 
 * Són les **variables o característiques** d’un objecte.  
 * Exemple: un cotxe té un **número de bastidor** → atribut de la classe *Coche*.  
@@ -50,7 +84,7 @@ L’objecte una unitat operacional que engloba de variables (denominades *atribu
 
 ---
 
-#### Mètodes
+#### 2.2.2. Mètodes
 
 * Són les **accions** que pot fer un objecte.  
 * Quan s’invoquen, **executen codi** i poden **modificar els atributs**.  
@@ -82,7 +116,7 @@ Es distingeix entre:
 
 ---
 
-#### Constructors i Destructors
+#### 2.2.3. Constructors i Destructors
 
 * Són **mètodes especials** que permeten **crear i eliminar objectes**.  
 * Serveixen per a:
@@ -95,7 +129,7 @@ Es distingeix entre:
 
 ---
 
-### 2.2. Associacions
+### 2.3. Associacions
 
 * Les **associacions** representen relacions entre classes.
 
@@ -136,6 +170,12 @@ El paradigma es fonamenta en:
 
 ---
 
+En aquest vídeo, **Mosh** ens descriu eixos 4 pilars i el seu us a javascript.
+
+<iframe width="800" height="500" src="https://www.youtube.com/embed/pTB0EiLXUC8?si=aa6JYUSvlToW8EKW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
 ### 3.1. Encapsulació
 
 * Combina **dades (atributs)** i **funcions (mètodes)** en una mateixa unitat: **l’objecte**.  
@@ -166,7 +206,7 @@ L’abstracció simplifica la interacció amb els objectes i es controla mitjan�
 
 ---
 
-#### Modificadors d’accés en Java
+#### 3.2.1. Modificadors d’accés en Java
 
 |                     | Classe | Paquet | Subclasse | Món |
 |---------------------|:------:|:------:|:---------:|:---:|
@@ -178,16 +218,13 @@ L’abstracció simplifica la interacció amb els objectes i es controla mitjan�
 🟢 **Encapsulació:** combinem dades i mètodes.
 🔵 **Abstracció:** mostrem només el necessari.
 
-Perfecte 👌
-Ací tens tot el contingut que has escrit, **net, polit i formatat correctament en Markdown estàndard**, amb una jerarquia clara i estil coherent amb les seccions anteriors. És totalment compatible amb **Marp**, **GitBook** o qualsevol altre renderitzador Markdown.
-
 ---
 
 ### 3.3. Herència
 
-L’herència és una relació entre classes que pot definir-se com “és un”.  
-Per exemple, una classe *Vehículo* pot contindre atributs comuns, i les classes *Coche* o *Camión* poden heretar-ne aquests atributs i afegir-ne de nous.  
-Així s’evita la duplicació de codi i s’aconsegueix **reutilització**.
+* L’herència és una relació entre classes que pot definir-se com “és un”.
+* Per exemple, una classe *Vehículo* pot contindre atributs comuns, i les classes *Coche* o *Camión* poden heretar-ne aquests atributs i afegir-ne de nous.  
+* Així s’evita la duplicació de codi i s’aconsegueix **reutilització**.
 
 ```java
 public class Vehiculo {
@@ -218,7 +255,7 @@ La jerarquia resultant forma una **estructura en arbre**.
 
 ---
 
-#### Classes abstractes
+#### 3.3.1. Classes abstractes
 
 Les **classes abstractes** permeten definir mètodes que les subclasses han d’implementar obligatòriament.
 S’utilitzen per assegurar que totes les subclasses tinguen un mètode concret, sense definir la seua implementació en la classe pare.
@@ -335,7 +372,7 @@ v2.arranca();
 | **PHP** | Híbrid | **Laravel**, **Symfony**, **WordPress**. |
 | **C#** | Pur | **ASP.NET**, **WPF**, **Xamarin**. |
 
-## Principis SOLID
+## 5. Principis SOLID
 
 Els **principis SOLID**, d'*Uncle Bob* representen cinc directrius fonamentals del disseny orientat a objectes.
 
@@ -349,12 +386,12 @@ Els **principis SOLID**, d'*Uncle Bob* representen cinc directrius fonamentals d
 
 ---
 
-![liskov_principle](md_media/liskov_meme.jpg)
+![bg left](md_media/liskov_meme.jpg)
 
 > 💡 *“El bon disseny no és aquell que no canvia mai, sinó aquell que pot canviar fàcilment.”*  
 > — *Robert C. Martin (Uncle Bob)*
 
-## Bibliografia
+## 6. Bibliografia
 
 1. [RedMonk – *Language Rankings*](https://redmonk.com/sogrady/2019/03/20/language-rankings-1-19/)  
 2. [Mosh Hamedani – *4 Pillars of Object-Oriented Programming*](https://codewithmosh.com/)  

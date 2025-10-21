@@ -30,6 +30,7 @@
 		],
 		"markdown-pdf.margin.top": "1cm",
 		"ltex.language": "ca-ES-valencia",
-		"ltex.languageToolHttpServerUri": "http://localhost:8081"
+		"ltex.languageToolHttpServerUri": "http://localhost:8081",
+		"markdown.marp.html": "all"
 	}
 }

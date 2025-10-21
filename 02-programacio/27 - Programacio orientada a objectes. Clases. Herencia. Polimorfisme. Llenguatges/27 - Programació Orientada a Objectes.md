@@ -29,7 +29,7 @@
 
 ## 1. Introducció
 
-El paradigma de la programació modular divideix el problema en un **conjunt de funcions que operen sobre un grup de dades** per arribar a la solució del problema. Aquest paradigma permet resoldre una gran quantitat de problemes. No obstant això, quan la complexitat d’aquests augmenta, també ho fan les interrelacions, per la qual cosa l’acoblament entre les funcions creix de manera exponencial. Açò acaba generant un codi molt difícil de mantenir, perquè no hi ha una manera senzilla de determinar si un can...
+El paradigma de la programació modular divideix el problema en un **conjunt de funcions que operen sobre un grup de dades** per arribar a la solució del problema. Aquest paradigma permet resoldre una gran quantitat de problemes. No obstant això, quan la complexitat d’aquests augmenta, també ho fan les interrelacions, per la qual cosa l’acoblament entre les funcions creix de manera exponencial. Açò acaba generant un codi molt difícil de mantenir, perquè no hi ha una manera senzilla de determinar si un canvi en una funció afectarà altres parts del programa.
 
 Davant d’aquesta problemàtica, sorgeix el paradigma de la **programació orientada a objectes** (OOP, de l’anglés *Object Oriented Programming*) com a alternativa i complement al de la programació modular. En ell es combinen funcions i dades relacionades en una unitat denominada *objecte*.
 

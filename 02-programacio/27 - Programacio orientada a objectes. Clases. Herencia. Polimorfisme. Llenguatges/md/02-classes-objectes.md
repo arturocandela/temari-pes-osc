@@ -132,7 +132,6 @@ classDiagram
         + para() : void
         + getNumeroDeBastidor() : String
     }
-
 ```
 
 Aquest diagrama UML representa visualment la definició de la classe `Coche`, mostrant atributs i mètodes amb els seus tipus i visibilitat.

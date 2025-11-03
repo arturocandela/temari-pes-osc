@@ -120,20 +120,19 @@ En altres llenguatges (com C++), sí que existeix un destructor explícit per ge
 
 ## 2.5. Diagrama conceptual
 
-```text
-     ┌─────────────────────────────────┐
-     │              Coche              │
-     ├─────────────────────────────────┤
-     │ - num_bastidor: String          │
-     │ - km_totales: float             │
-     │ - litros_gasolina: float        │
-     │ - en_marcha: boolean            │
-     ├─────────────────────────────────┤
-     │ + Coche(bastidor: String)       │
-     │ + arranca(): void               │
-     │ + para(): void                  │
-     │ + getNumeroDeBastidor(): String │
-     └─────────────────────────────────┘
+```mermaid
+classDiagram
+    class Coche {
+        - num_bastidor : String
+        - km_totales : float
+        - litros_gasolina : float
+        - en_marcha : boolean
+        + Coche(bastidor : String)
+        + arranca() : void
+        + para() : void
+        + getNumeroDeBastidor() : String
+    }
+
 ```
 
 Aquest diagrama UML representa visualment la definició de la classe `Coche`, mostrant atributs i mètodes amb els seus tipus i visibilitat.

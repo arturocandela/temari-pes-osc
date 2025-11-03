@@ -2,6 +2,9 @@ site_name: Programació Orientada a Objectes
 site_description: Materials POO per a l'aula
 site_author: Arturo Candela
 
+docs_dir: 'md'
+site_dir: 'docs'
+
 nav:
     - Home: index.md
     - 1. Introducció: 01-introduccio.md

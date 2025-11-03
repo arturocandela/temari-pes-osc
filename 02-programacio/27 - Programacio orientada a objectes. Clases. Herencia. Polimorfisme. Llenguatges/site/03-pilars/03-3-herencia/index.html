@@ -1,0 +1,1383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Materials POO per a l'aula">
+      
+      
+        <meta name="author" content="Arturo Candela">
+      
+      
+      
+        <link rel="prev" href="../03-2-abstraccio/">
+      
+      
+        <link rel="next" href="../03-3-1-classes-abstractes/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Qué es - Programació Orientada a Objectes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#33-herencia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programació Orientada a Objectes" class="md-header__button md-logo" aria-label="Programació Orientada a Objectes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programació Orientada a Objectes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Qué es
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programació Orientada a Objectes" class="md-nav__button md-logo" aria-label="Programació Orientada a Objectes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programació Orientada a Objectes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-introduccio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Classes i Objectes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Classes i Objectes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-classes-objectes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classes i Objectes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-2-associacions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Associacions (Agregació/Composició)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Els 4 Pilars
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Els 4 Pilars
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-1-encapsulacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Encapsulació
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-2-abstraccio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abstracció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Herència
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Herència
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Qué es
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Qué es
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#331-principi-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1. Principi bàsic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#332-exemple-dus" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2. Exemple d’ús
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#333-herencia-simple-i-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3. Herència simple i múltiple
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-reutilitzacio-i-especialitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4. Reutilització i especialització
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3.4. Reutilització i especialització">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-uml-textual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquia UML textual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#335-lacces-a-la-superclasse" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.5. L’accés a la superclasse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#336-avantatges-de-la-herencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.6. Avantatges de la herència
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#337-riscos-i-bones-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.7. Riscos i bones pràctiques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#338-resum-comparatiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.8. Resum comparatiu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#339-conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.9. Conclusió
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-3-1-classes-abstractes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classes Abstractes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-3-2-interficies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interfícies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Polimorfisme
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Polimorfisme
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-4-polimorfisme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Polimorfisme (visió general)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-4-1-sobrec%C3%A0rrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobrecàrrega (ad-hoc)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-4-2-sobreescriptura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobreescriptura (d’inclusió)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-4-3-variables-polimorfes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables polimòrfiques
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Llenguatges
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Llenguatges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-llenguatges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Més Representatius
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-1-principi-liskov/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exemple visual (LSP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-conclusio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Conclusió
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6. Bibliografia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7. About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercicis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#331-principi-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1. Principi bàsic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#332-exemple-dus" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2. Exemple d’ús
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#333-herencia-simple-i-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3. Herència simple i múltiple
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-reutilitzacio-i-especialitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4. Reutilització i especialització
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3.4. Reutilització i especialització">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-uml-textual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquia UML textual
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#335-lacces-a-la-superclasse" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.5. L’accés a la superclasse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#336-avantatges-de-la-herencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.6. Avantatges de la herència
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#337-riscos-i-bones-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.7. Riscos i bones pràctiques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#338-resum-comparatiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.8. Resum comparatiu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#339-conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.9. Conclusió
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="33-herencia">3.3. Herència</h1>
+<p>La <strong>herència</strong> és el tercer pilar fonamental de la programació orientada a objectes.<br />
+Permet crear noves classes a partir d’altres ja existents, heretant-ne <strong>atributs</strong> i <strong>mètodes</strong>, i afegint-hi o modificant-hi funcionalitats segons convinga.</p>
+<p>Gràcies a la herència, es pot <strong>reutilitzar codi</strong> i evitar la duplicació, mantenint una jerarquia lògica que reflectix relacions del tipus <strong>“és un” (is-a)</strong>.</p>
+<hr />
+<h2 id="331-principi-basic">3.3.1. Principi bàsic</h2>
+<p>Quan una classe deriva d’una altra, la nova classe <strong>hereta</strong> totes les característiques de la seua antecessora, llevat dels elements declarats com a <code>private</code>.<br />
+La classe base s’anomena <strong>superclasse</strong> i la que hereta, <strong>subclasse</strong>.</p>
+<pre><code class="language-java">public class Vehiculo {
+    protected int km_totales;
+    private String num_bastidor;
+}
+
+public class Coche extends Vehiculo {
+    int num_pasajeros;
+}
+
+public class Camion extends Vehiculo {
+    void soltarCaja(){
+        System.out.println(&quot;Caixa desenganxada.&quot;);
+    }
+}
+</code></pre>
+<p>Ací, <code>Coche</code> i <code>Camion</code> <strong>hereten</strong> els atributs i mètodes públics i protegits de <code>Vehiculo</code>, com ara <code>km_totales</code>.<br />
+L’atribut <code>num_bastidor</code>, en canvi, és <code>private</code> i per tant no és accessible des de les subclasses.</p>
+<hr />
+<h2 id="332-exemple-dus">3.3.2. Exemple d’ús</h2>
+<pre><code class="language-java">public class Vehiculo {
+    protected int km_totales;
+    private String num_bastidor;
+
+    public Vehiculo(String bastidor){
+        num_bastidor = bastidor;
+        km_totales = 0;
+    }
+
+    public void avanza(int km){
+        km_totales += km;
+        System.out.println(&quot;Avançant &quot; + km + &quot; km.&quot;);
+    }
+
+    public int getKmTotales(){
+        return km_totales;
+    }
+}
+
+public class Coche extends Vehiculo {
+    int num_pasajeros;
+
+    public Coche(String bastidor, int pasajeros){
+        super(bastidor); // crida al constructor de la superclasse
+        num_pasajeros = pasajeros;
+    }
+
+    public void mostrarInfo(){
+        System.out.println(&quot;Coche amb &quot; + num_pasajeros + &quot; passatgers.&quot;);
+        System.out.println(&quot;Quilòmetres totals: &quot; + km_totales);
+    }
+}
+</code></pre>
+<p>L’ús de <code>super()</code> permet inicialitzar la part heretada de la classe base.<br />
+Les subclasses poden afegir nous atributs o mètodes propis sense duplicar codi.</p>
+<hr />
+<h2 id="333-herencia-simple-i-multiple">3.3.3. Herència simple i múltiple</h2>
+<p>En Java, una classe <strong>només pot heretar d’una altra</strong> (herència simple).<br />
+No obstant això, pot implementar diverses <strong>interfícies</strong>, cosa que permet aconseguir un efecte semblant a l’herència múltiple.</p>
+<p>Altres llenguatges, com C++ o Python, sí que permeten <strong>herència múltiple directa</strong>, encara que pot generar ambigüitats si no es gestiona correctament.</p>
+<table>
+<thead>
+<tr>
+<th>Tipus</th>
+<th>Exemple</th>
+<th>Comentari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Herència simple</strong></td>
+<td><code>class Coche extends Vehiculo</code></td>
+<td>Només una superclasse directa</td>
+</tr>
+<tr>
+<td><strong>Herència múltiple (indirecta)</strong></td>
+<td><code>class Coche implements Motor, Conductor</code></td>
+<td>Diverses interfícies, sense duplicar implementació</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="334-reutilitzacio-i-especialitzacio">3.3.4. Reutilització i especialització</h2>
+<p>L’herència permet construir jerarquies que van de classes més generals a classes més específiques.<br />
+Cada nivell pot <strong>afegir o sobreescriure</strong> funcionalitats de les classes superiors.</p>
+<pre><code class="language-java">class Vehiculo {
+    void arranca(){ System.out.println(&quot;El vehicle arranca.&quot;); }
+}
+
+class Coche extends Vehiculo {
+    void abrirMaletero(){ System.out.println(&quot;Maleter obert.&quot;); }
+}
+
+class Deportivo extends Coche {
+    void activarModoSport(){ System.out.println(&quot;Mode Sport activat!&quot;); }
+}
+</code></pre>
+<h3 id="jerarquia-uml-textual">Jerarquia UML textual</h3>
+<pre><code class="language-text">Vehiculo
+   │
+   └── Coche
+          │
+          └── Deportivo
+</code></pre>
+<p>Aquesta jerarquia mostra com <code>Deportivo</code> hereta de <code>Coche</code>, que al seu torn hereta de <code>Vehiculo</code>.</p>
+<hr />
+<h2 id="335-lacces-a-la-superclasse">3.3.5. L’accés a la superclasse</h2>
+<p>La paraula clau <code>super</code> permet:</p>
+<ul>
+<li>Invocar el <strong>constructor</strong> de la classe base.</li>
+<li>Accedir a <strong>mètodes o atributs</strong> de la superclasse que hagen sigut redefinits.</li>
+</ul>
+<pre><code class="language-java">class Vehiculo {
+    void mostrarTipo(){ System.out.println(&quot;Soc un vehicle.&quot;); }
+}
+
+class Coche extends Vehiculo {
+    @Override
+    void mostrarTipo(){
+        super.mostrarTipo();  // Crida al mètode de la superclasse
+        System.out.println(&quot;Concretament, soc un cotxe.&quot;);
+    }
+}
+</code></pre>
+<p>Eixida:</p>
+<pre><code>Soc un vehicle.
+Concretament, soc un cotxe.
+</code></pre>
+<hr />
+<h2 id="336-avantatges-de-la-herencia">3.3.6. Avantatges de la herència</h2>
+<ul>
+<li><strong>Reutilització de codi</strong>: evita duplicar funcionalitats comunes.  </li>
+<li><strong>Extensibilitat</strong>: permet afegir comportaments nous mitjançant subclasses.  </li>
+<li><strong>Organització jeràrquica</strong>: estructura les classes de forma natural segons el domini.  </li>
+<li><strong>Polimorfisme</strong>: possibilita que objectes de diferents subclasses siguen tractats com a instàncies d’una mateixa superclasse.</li>
+</ul>
+<hr />
+<h2 id="337-riscos-i-bones-practiques">3.3.7. Riscos i bones pràctiques</h2>
+<p>Encara que la herència és molt útil, cal utilitzar-la amb criteri:</p>
+<ul>
+<li>No abusar-ne per <strong>reutilitzar codi</strong> quan realment només caldria composició (veure el principi <em>“preferix composició a herència”</em>).  </li>
+<li>Evitar herències massa profundes (més de tres nivells), ja que compliquen el manteniment.  </li>
+<li>Fer que les classes base siguen <strong>coherents i estables</strong>, per no trencar el funcionament de les subclasses.</li>
+</ul>
+<hr />
+<h2 id="338-resum-comparatiu">3.3.8. Resum comparatiu</h2>
+<table>
+<thead>
+<tr>
+<th>Concepte</th>
+<th>Descripció</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Superclasse</strong></td>
+<td>Classe de la qual s’hereten atributs i mètodes</td>
+<td><code>Vehiculo</code></td>
+</tr>
+<tr>
+<td><strong>Subclasse</strong></td>
+<td>Classe que hereta d’una altra i pot ampliar o modificar funcionalitats</td>
+<td><code>Coche</code></td>
+</tr>
+<tr>
+<td><strong><code>super</code></strong></td>
+<td>Paraula clau per accedir a la superclasse</td>
+<td><code>super.avanza(10);</code></td>
+</tr>
+<tr>
+<td><strong>Herència simple</strong></td>
+<td>Una única classe base</td>
+<td><code>class Coche extends Vehiculo</code></td>
+</tr>
+<tr>
+<td><strong>Herència múltiple</strong></td>
+<td>Diverses classes base (només amb interfícies en Java)</td>
+<td><code>implements</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="339-conclusio">3.3.9. Conclusió</h2>
+<p>La herència permet modelar relacions jeràrquiques i promou la reutilització i la coherència en el disseny del programari.<br />
+Tanmateix, ha de combinar-se amb altres principis com la <strong>composició</strong>, la <strong>cohesió</strong> i el <strong>polimorfisme</strong> per mantenir un codi flexible i sostenible.</p>
+<blockquote>
+<p><em>“Heretar és aprendre dels que ja existeixen per construir alguna cosa millor.”</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

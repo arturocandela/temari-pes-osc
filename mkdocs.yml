@@ -2,8 +2,8 @@ site_name: Programació Orientada a Objectes
 site_description: Materials POO per a l'aula
 site_author: Arturo Candela
 
-docs_dir: 'md'
-site_dir: '../../docs'
+docs_dir: '02-programacio/27 - Programacio orientada a objectes. Clases. Herencia. Polimorfisme. Llenguatges/md'
+site_dir: 'docs'
 
 nav:
     - Home: index.md
